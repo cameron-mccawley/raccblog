@@ -5,6 +5,7 @@ draft: false
 description: ""
 tags: ["ctf"]
 ---
+## Writeup
 > pls beat the game
 
 In this challenge, we are given a command line game of cookie clicker! Running the binary we see the game:

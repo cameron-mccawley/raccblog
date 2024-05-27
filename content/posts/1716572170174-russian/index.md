@@ -5,6 +5,7 @@ draft: false
 description: ""
 tags: ["ctf"]
 ---
+## Writeup
 > I recall storing the password as a PDF, and I xored it with a 4-byte repeating key (e.g. ab cd ef 01 ab cd ef 01 ...), but I forgot my key, and I cannot get it back :(.
 > Hint: you will not need to brute force this.
 

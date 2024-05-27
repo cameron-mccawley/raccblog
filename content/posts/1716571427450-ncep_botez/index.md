@@ -5,6 +5,7 @@ draft: false
 description: ""
 tags: ["ctf"]
 ---
+## Writeup
 For this challenge, we are given a binary that is very similar looking to the one from NCEP_XQC. 
 Running the program there is that same GNU chess game that we can interact with, but this time we have no control over the command line arguments, so no injection. Messing around with the program we can see that the only place we have any sort of control is when we make our move:
 

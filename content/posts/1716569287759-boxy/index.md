@@ -5,6 +5,7 @@ draft: false
 description: ""
 tags: ["ctf"]
 ---
+## Writeup
 > Time to poke at a linux box and see what there is to find. Im going to give you the flag right now, and the program to decrypt it too!
 > You will have to find 7 flags to solve this challenge! They will be combined through Shamir Secret Sharing, and allow you to decrypt the flag!
 

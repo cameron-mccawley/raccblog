@@ -5,6 +5,7 @@ draft: false
 description: ""
 tags: ["ctf"]
 ---
+## Writeup
 So, to start off, I knew pretty much nothing about cryptography and assumed that it was probably all black magic before this, but after spending 3 days on this challenge asking for help and googling everything I could, I can now say with abosulte certainty that my assumptions are correct.  Crypto is black magic.
 
 To start, we are given two files.  `puzzle.py`, which is the script that was used to encrypt the flag, and `output.txt`, which gives us p, q, n, and our cipher text c.  We also know what e is as it is used in the python script provided.

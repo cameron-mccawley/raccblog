@@ -5,6 +5,7 @@ draft: false
 description: ""
 tags: ["ctf"]
 ---
+## Writeup
 For this web challenge, we are given a link to a website that bears a striking resemblance to a certain DEF CON challenge. ~~pew pew~~  
 
 {{< figure src="/img/almost-1.png" >}}

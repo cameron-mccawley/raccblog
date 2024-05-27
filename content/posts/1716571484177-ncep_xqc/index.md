@@ -5,6 +5,7 @@ draft: false
 description: ""
 tags: ["ctf"]
 ---
+## Writeup
 For this challenge, we are given a simple program that just runs GNU chess.
 Right away we can see that it lets us input command line arguments! Maybe we can just do a simple commandline injection to cat the flag:
 

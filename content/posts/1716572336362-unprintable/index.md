@@ -5,6 +5,7 @@ draft: false
 description: ""
 tags: ["ctf"]
 ---
+## Writeup
 We are given a binary, so let's see what it does:
 ```
 I found some empty room in the RAM on this system, and prepared some especially for you!

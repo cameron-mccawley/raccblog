@@ -1,6 +1,6 @@
 colorScheme = "avocado"
 defaultAppearance = "dark"
-autoSwitchAppearance = true
+autoSwitchAppearance = false
 enableSearch = true
 enableCodeCopy = false
 disableImageOptimization = false
@@ -25,7 +25,8 @@ showMoreLink = "true"
 showMoreLinkDest = "/posts"
 cardView = "true"
 cardViewScreenWidth = false
-layoutBackgroundBlur = true
+layoutBackgroundBlur = false
+homepageImage = "755385.jpg"
 
 [article]
 showDate = true
@@ -46,7 +47,7 @@ showHeadingAnchors = true
 showPagination = true
 invertPagination = false
 showReadingTime = true
-showTableOfContents = false
+showTableOfContents = true
 showTaxonomies = false
 showAuthorsBadges = false
 showWordCount = true

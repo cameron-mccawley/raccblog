@@ -5,7 +5,7 @@ draft: false
 description: ""
 tags: ["ctf"]
 ---
-
+## Writeup
 A simple review challenge.  Let's see how it goes :3
 
 So running the binary, we get some info:

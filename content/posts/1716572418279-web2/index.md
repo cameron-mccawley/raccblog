@@ -5,6 +5,7 @@ draft: false
 description: ""
 tags: ["ctf"]
 ---
+## Writeup
 For this challenge, we are given a website.  Opening the link takes us to this page:
 
 {{< figure src="/img/webpage.png" >}}

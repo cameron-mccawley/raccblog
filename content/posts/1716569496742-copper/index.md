@@ -5,6 +5,7 @@ draft: false
 description: ""
 tags: ["ctf"]
 ---
+## Writeup
 > Time to smith some copper!
 
 For this challenge, we are given a python script that was used to encrypt the flag, along with the output file that was created from it.

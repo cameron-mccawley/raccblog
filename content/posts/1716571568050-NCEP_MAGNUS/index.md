@@ -5,6 +5,7 @@ draft: false
 description: ""
 tags: ["ctf"]
 ---
+## Writeup
 > The pwn finale!
 
 For this challenge, we are given a fairly complicated binary, which follows the theme of the previous two challenges of being a binary based around the GNU Chess program. The main gimmick for this program is that it allows you to spawn multiple threads of GNU Chess and schedule the threads as processes, so let's just jump right in and start taking a closer look at the binary.

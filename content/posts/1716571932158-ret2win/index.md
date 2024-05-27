@@ -5,6 +5,7 @@ draft: false
 description: ""
 tags: ["ctf"]
 ---
+## Writeup
 The goal of this challenge is to redirect code flow to the `win()` function.  Opening up the binary in GDB, we can see some other interesting functions that we have.
 ```
 0x0000000000400607  win

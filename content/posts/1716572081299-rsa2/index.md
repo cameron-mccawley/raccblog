@@ -5,6 +5,7 @@ draft: false
 description: ""
 tags: [""]
 ---
+## Writeup
 RSA 2 is a bit of a continuation off of RSA 1.  In order to access the challenge, we need to use openssl with the flag from RSA 1 to decrypt the TAR file.  To do this we can run `openssl enc -d -aes-256-ctr -pbkdf2 -nosalt -p -in rsa2.tar.gz.enc -out rsa2.tar.gz`, input the flag, and we get our challenge.
 
 Looking at our `output.txt`, we can see that we are only given `N` and `c`.  And in our `puzzle.py`, which was used to encrypt the flag, we can see the `e` used.

@@ -5,6 +5,7 @@ draft: false
 description: ""
 tags: ["ctf"]
 ---
+## Writeup
 > Another day, another intrusion here at IcyRetina. Can you help recover the encrypted files APT42 stole from this victim?
 
 The catagory of this challenge is malware. To start, we are given a pcapng file named `snowcone`. Opening this up in Wireshark we are able to see an interesting http stream with the info of `GET /snowcone.exe HTTP/1.1`.  

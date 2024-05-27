@@ -1,0 +1,22 @@
+.order-first.lg\:ml-auto.px-0.lg\:order-last.ltr\:lg\:pl-8.rtl\:lg\:pr-8 {
+    flex: 0 0 auto; /* Fix width for the table of contents */
+    margin-right: 0; /* Align it properly */
+    padding-left: 30px; /* Adjust padding if needed */
+    padding-right: 0px; /* Adjust padding if needed */
+}
+
+/* Ensure article content within the main content area uses full width */
+.article-content.max-w-prose.mb-20 {
+    max-width: none; /* Remove the max-width limit */
+    width: 100%; /* Make it take full width */
+}
+
+.min-w-0.min-h-0.max-w-fit {
+    flex: 1; /* Allow content to take remaining space */
+    max-width: none;
+    width: auto; /* Adjust width to be dynamic */
+}
+
+ol.border-l-2.border-primary-500.dark\:border-primary-300 {
+    list-style-type: none; /* Remove the default list markers */
+}

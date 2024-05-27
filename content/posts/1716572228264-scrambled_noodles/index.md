@@ -5,6 +5,7 @@ draft: false
 description: ""
 tags: ["ctf"]
 ---
+## Writeup
 > My assistant sent me this .wav as an update on a case he is working on, however I dont know what to do with it. Such a frustrating April Fools Joke, and I'm missing an update on this case.
 
 For this challenge, we are given a WAV file that when played, Rick Rolls us....

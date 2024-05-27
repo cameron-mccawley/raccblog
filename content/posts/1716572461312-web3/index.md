@@ -5,6 +5,7 @@ draft: false
 description: ""
 tags: ["ctf"]
 ---
+## Writeup
 For this challenge, we are given a website that bears a resemblance to a previous challenge we did (cowsay), though this one is a bit more complicated.
 
 {{< figure src="/img/1.png" >}}

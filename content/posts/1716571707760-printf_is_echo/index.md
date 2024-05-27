@@ -5,7 +5,7 @@ draft: false
 description: ""
 tags: ["ctf"]
 ---
-
+## Writeup
 Oh boy. We got by the title what looks to be some sort of challenge involving printf.  Let's run the binary and take a look.
 
 ```
